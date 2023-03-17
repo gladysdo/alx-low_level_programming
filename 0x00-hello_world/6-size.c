@@ -1,16 +1,20 @@
 #include <stdio.h>
+
 /**
- * main - the main function
+ * main - main block
  *
- * Return: o when successful
- **/
+ * Description:  with proper grammar, but the outcome is a piece of art
+ *
+ * Return: Always 0
+ *
+ */
 
 int main(void)
 {
-	printf("size of char is : %ln byte(s)", sizeof(char));
-	printf("size of int is : %ln byte(s)", sizeof(int));
-	printf("size of long long : %ln byte(s)", sizeof(long long int));
-	printf("size of long int :%ln byte(s)", sizeof(long int));
+	printf("Size of a char: %d byte(s)\n", sizeof(char));
+	printf("Size of an int: %i byte(s)\n", sizeof(int));
+	printf("Size of a long int: %i byte(s)\n", sizeof(long int));
+	printf("Size of a long long int: %i byte(s)\n", sizeof(long long int));
+	printf("Size of a float: %i byte(s)\n", sizeof(float));
 	return (0);
-
 }
