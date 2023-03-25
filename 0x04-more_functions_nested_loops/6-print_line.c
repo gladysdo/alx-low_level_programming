@@ -2,7 +2,7 @@
 
 void print_line(int n)
 {
-	int count = o;
+	int count = 0;
 
 	if (n <= 0)
 		_putchar('\n');
@@ -10,7 +10,7 @@ void print_line(int n)
 	{
 		while (count < n)
 		{
-			putchar('-');
+			_putchar('-');
 			count++;
 		}
 		_putchar('\n');
