@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_line - function to draws a straight line in the terminal.
+ *
+ * Return : always 0
+ */
 void print_line(int n)
 {
 	int count = 0;
