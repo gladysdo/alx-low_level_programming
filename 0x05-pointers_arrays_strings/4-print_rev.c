@@ -11,9 +11,11 @@ void print_rev(char *s)
 	int q;
 	int sum;
 
-	for (q = 0; s[1] != '\0'; q++)
+	for (q = 0; s[q] != '\0'; q++)
 		sum++;
+	{
 	for (q = sum; q >= 0; q--)
-		_putchar(s[1]);
+		_putchar(s[q]);
+	}
 	_putchar('\n');
 }
