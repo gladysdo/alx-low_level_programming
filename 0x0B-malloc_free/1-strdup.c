@@ -4,8 +4,8 @@
 
 /**
  * strdup - pointer to a newly allocated space in memory
- * @str: array
- *Return: 0
+ * @str: parameter of array
+ *Return: nst
  */
 
 char *_strdup(char *str)
