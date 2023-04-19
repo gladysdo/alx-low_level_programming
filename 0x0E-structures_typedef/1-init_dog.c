@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 /**
- * init_dog -  initialize a variable of type struct dog
- * @struct dog: short discribution
+ * init_dog -  initialize a variable of type struct do
  * @d: intializing variable
  * @name: first member
  * @age: second member
