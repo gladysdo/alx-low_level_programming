@@ -2,22 +2,17 @@
 
 /**
  * reverse_listint - reverses a listint_t linked list.
- * @head: head of double pointers
+ * @head: dounle pointers
  * Return: head
- *
  */
-
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *new, *old;
+	listint_t *new = NULL, *old;
 
-	if (head == NULL || head == NULL)
-		return (NULL);
-	if ((*head)->next == NULL)
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return (*head);
-	old = NULL;
-	while (new != NULL)
+	while (*head != NULL)
 	{
 		old = (*head)->next;
 		(*head)->next = new;
