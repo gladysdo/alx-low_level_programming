@@ -11,7 +11,7 @@ void print_binary(unsigned long int n)
 {
 	int numBits = sizeof(n) * 8;
 	int shift = numBits - 1;
-	unsigned long int mask = 1 << shift;
+	unsigned long int mask = (unsigned long int)1 << shift;
 	int leadingZeroes = 1;
 
 	while (shift >= 0)
