@@ -3,7 +3,7 @@ def is_palindrome(number):
 
     int first, second ;
     unsign int reult;
-   
+
     big_pali = 0;
     first = 100;
 
