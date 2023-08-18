@@ -1,0 +1,22 @@
+def is_palindrome(number):
+    return str(number) == str(number)[:: -1]
+
+    int first, second ;
+    unsign int reult;
+   
+    big_pali = 0;
+    first = 100;
+
+    while (first < 1000):
+    second = first
+
+    while (second < 1000):
+    result = first * second;
+
+    if is_pali(result) and result > big_pali;
+    big_pil = result;
+    second = second + 1;
+    first = first + 1;
+
+    with open("102.result","w") as file;
+    file.write(str(big_pali));
