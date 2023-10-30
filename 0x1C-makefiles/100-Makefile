@@ -1,0 +1,37 @@
+# Makefile variables
+CC = gcc
+SRC = main.c file1.c file2.c
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Default target: build the executable
+all: $(NAME)
+
+# Build the executable
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+
+# Clean Emacs and Vim temporary files, executable, and object files
+fclean: clean
+	$(RM) $(NAME)
+
+# Clean Emacs and Vim temporary files, and object files
+clean: oclean
+	$(RM) $(NAME)
+
+# Delete object files
+oclean:
+	$(RM) $(OBJ)
+
+# Force recompilation of all source files
+re: oclean all
+
+# Compile source files
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Prevent make from failing when there is a file with the same name as a rule
+.PHONY: all clean oclean fclean re
+
