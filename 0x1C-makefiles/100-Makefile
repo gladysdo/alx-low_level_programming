@@ -1,36 +1,46 @@
-# Makefile variables
+# Makefile for the school project
+
+# Compiler
 CC = gcc
+
+# Source files
 SRC = main.c file1.c file2.c
+
+# Object files
 OBJ = $(SRC:.c=.o)
+
+# Executable name
 NAME = school
+
+# Program to delete files
 RM = rm -f
+
+# Compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-# Default target: build the executable
+# Main rule to build the executable
 all: $(NAME)
 
-# Build the executable
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
-# Clean Emacs and Vim temporary files, executable, and object files
-fclean: clean
-	$(RM) $(NAME)
+# Clean rule to delete temporary files and the executable
+clean:
+	$(RM) *~ $(NAME)
 
-# Clean Emacs and Vim temporary files, and object files
-clean: oclean
-	$(RM) $(NAME)
-
-# Delete object files
+# Oclean rule to delete object files
 oclean:
 	$(RM) $(OBJ)
 
-# Force recompilation of all source files
-re: oclean all
+# Fclean rule to delete temporary files, the executable, and object files
+fclean: clean oclean
 
-# Compile source files
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
+# Re rule to force recompilation of source files
+re: fclean all
 
-# Prevent make from failing when there is a file with the same name as a rule
-.PHONY: all clean oclean fclean re
+# Dependency of object files on source files
+$(OBJ): $(SRC)
+
+# Ensure that the project does not compile if the header file m.h is missing
+-include m.h
+
